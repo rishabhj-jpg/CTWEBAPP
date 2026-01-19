@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Manchester City FC - Fan Portal</title>
+    <!-- Link Manifest File for iOS Web Push -->
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <!-- CleverTap Web SDK Integration SCRIPT -->
+    <script type="text/javascript">
+        var clevertap = {event:[], profile:[], account:[], onUserLogin:[], notifications:[], privacy:[]};
+        clevertap.account.push({"id": "RKR-ZZ7-ZR7Z"}, "eu1");
+        clevertap.privacy.push({optOut: false}); // Set true if user opts out
+        clevertap.privacy.push({useIP: true}); // Set true to share IP for geo-location
+
+
+        (function () {
+            var wzrk = document.createElement('script');
+            wzrk.type = 'text/javascript';
+            wzrk.async = true;
+            wzrk.src = ('https:' == document.location.protocol ? 'https://d2r1yp2w7bby2u.cloudfront.net' : 'http://static.clevertap.com') + '/js/clevertap.min.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wzrk, s);
+        })();
+    </script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Manchester City FC</h1>
+        <button id="loginBtn">Login / Identify User</button>
+        <button id="pushPromptBtn">Enable Push Notifications</button>
+    </header>
+
+    <main><section class="player-list">
+    <h2>First Team Squad</h2>
+    <div class="player-grid">
+        <div class="player-card" data-player="Haaland">
+            <div class="jersey-badge">9</div>
+            <img src="images/haaland.png" alt="Erling Haaland" class="player-image">
+            <div class="player-info">
+                <h3>Erling Haaland</h3>
+                <span class="player-position">Striker</span>
+                <span class="player-nationality">🇳🇴 Norway</span>
+                <p>Top scorer with incredible finishing ability</p>
+                <button class="view-btn">View Profile & Stats</button>
+            </div>
+        </div>
+        
+        <div class="player-card" data-player="De Bruyne">
+            <div class="jersey-badge">17</div>
+            <img src="images/debruyne.png" alt="Kevin De Bruyne" class="player-image">
+            <div class="player-info">
+                <h3>Kevin De Bruyne</h3>
+                <span class="player-position">Midfielder</span>
+                <span class="player-nationality">🇧🇪 Belgium</span>
+                <p>Creative playmaker and team captain</p>
+                <button class="view-btn">View Profile & Stats</button>
+            </div>
+        </div>
+    </div>
+</section>
+        </section>
+
+        <!-- Web Inbox -->
+<section id="inbox-section">
+    <h2> Team News Inbox</h2>
+    <div class="inbox-header">
+        <button id="inboxBell" class="inbox-bell">
+            🔔
+            <span id="inboxBadge" class="inbox-badge">0</span>
+        </button>
+        <button id="markAllReadBtn">Mark All Read</button>
+    </div>
+    <div id="inboxMessageContainer" class="message-container" style="display: none;"></div>
+</section>
+
+        <!-- Web Pop-ups & Exit Intent Controls -->
+<section id="popup-controls">    
+    <div class="button-group">
+        <button id="triggerBoxPopup" class="popup-btn"> Box Pop-up</button>
+        <button id="triggerBannerPopup" class="popup-btn"> Banner Pop-up</button>
+        <button id="triggerInterstitialPopup" class="popup-btn"> Interstitial Pop-up</button>
+        <button id="triggerExitIntent" class="popup-btn"> Exit Intent</button>
+        <button id="popup-action-btn" class="popup-btn">popup action</button>
+    </div>
+</section>
+        <!-- Native Display -->
+    <section id="native-display-section">
+        <div id="clevertap-banner-container" class="native-container">
+            <p><em>Default fallback content. A personalized banner will appear here if a campaign is active.</em></p>
+        </div>   
+        <div id="custom-kv-container" class="native-container">
+        <p><em>Custom personalized messages will appear here.</em></p>
+        </div>
+    </section>
+ </main>
+</body>
+</html>
