@@ -19,7 +19,7 @@ clevertap.notifications.push({
    	"rejectButtonText": "No thanks",
    	"okButtonColor":"#F28046",
    	"askAgainTimeInSeconds":5,
-  	"serviceWorkerPath": "/clevertap_sw.js" 
+  	"serviceWorkerPath": "/Users/rishabh.j/CTWEBAPP/clevertap_sw.js" 
   });
 });
 
@@ -74,20 +74,9 @@ function loadInboxMessages() {
             messageContainer.appendChild(messageEl);
         });
 
-        updateUnreadBadge();
     });
 }
 
-function updateUnreadBadge() {
-    clevertap.getInboxMessageUnreadCount(function(err, count) {
-        if (!err && count > 0) {
-            inboxBadge.textContent = count;
-            inboxBadge.style.display = 'block';
-        } else {
-            inboxBadge.style.display = 'none';
-        }
-    });
-}
 
 inboxBell.addEventListener('click', function() {
     const isVisible = messageContainer.style.display === 'block';
