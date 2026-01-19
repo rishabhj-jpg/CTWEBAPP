@@ -129,9 +129,12 @@ clevertap.notificationCallback = function(notification) {
         msgId: notification.msgId,
         pivotId: notification.pivotId || null
     });
-    
     setTimeout(function() {
         var actionButton = document.getElementById('popup-action-btn');
+        actionButton.addEventListener('click', function() {
+        clevertap.event.push("push");
+        alert('A web push  in your dashboard.');
+        });
         if (actionButton) {
             actionButton.addEventListener('click', function() {
                 clevertap.renderNotificationClicked({
@@ -164,5 +167,7 @@ document.getElementById('triggerExitIntent').addEventListener('click', function(
     clevertap.event.push("Exit Intent Simulated");
     alert('Exit Intent simulated.');
 });
+
+document.getElementById()
 
 console.log('Web Pop-up handlers initialized.');
