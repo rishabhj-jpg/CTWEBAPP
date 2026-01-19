@@ -167,39 +167,39 @@ document.getElementById('triggerExitIntent').addEventListener('click', function(
 
 console.log('Web Pop-up handlers initialized.');
 
-document.addEventListener("CT_web_native_display", function(event) {
-    console.log("[CleverTap] Native Display Event Received:", event.detail);
+// document.addEventListener("CT_web_native_display", function(event) {
+//     console.log("[CleverTap] Native Display Event Received:", event.detail);
 
-    const data = event.detail;
-    const topic = data.kv.topic;
-    switch (topic) {
-        case "Cart drop-off":
-            renderCartDropOffCampaign(data);
-            break;
-        default:
-            console.warn("[CleverTap] Unknown campaign topic:", topic);
-    }
-});
+//     const data = event.detail;
+//     const topic = data.kv.topic;
+//     switch (topic) {
+//         case "Cart drop-off":
+//             renderCartDropOffCampaign(data);
+//             break;
+//         default:
+//             console.warn("[CleverTap] Unknown campaign topic:", topic);
+//     }
+// });
 
-function renderCartDropOffCampaign(data) {
-    const userName = data.kv.Name;
-    const productName = data.kv.Cart;
+// function renderCartDropOffCampaign(data) {
+//     const userName = data.kv.Name;
+//     const productName = data.kv.Cart;
 
-    const bannerEl = document.getElementById('custom-kv-container');
-    bannerEl.style.display = 'block';
+//     const bannerEl = document.getElementById('custom-kv-container');
+//     bannerEl.style.display = 'block';
 
-    document.getElementById('user-name').textContent = userName;
-    document.getElementById('product-name').textContent = productName;
+//     document.getElementById('user-name').textContent = userName;
+//     document.getElementById('product-name').textContent = productName;
 
-    bannerEl.querySelector('.close').addEventListener('click', function() {
-        bannerEl.style.display = 'none';
-    });
+//     bannerEl.querySelector('.close').addEventListener('click', function() {
+//         bannerEl.style.display = 'none';
+//     });
 
-    clevertap.renderNotificationViewed(data);
+//     clevertap.renderNotificationViewed(data);
 
-    bannerEl.addEventListener('click', function() {
-        clevertap.renderNotificationClicked(data);
-    });
+//     bannerEl.addEventListener('click', function() {
+//         clevertap.renderNotificationClicked(data);
+//     });
 
-    console.log(`[CleverTap] Rendered cart drop-off campaign for ${userName}`);
-}
+//     console.log(`[CleverTap] Rendered cart drop-off campaign for ${userName}`);
+// }
