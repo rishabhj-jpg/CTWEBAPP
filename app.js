@@ -146,17 +146,17 @@ clevertap.notificationCallback = function(notification) {
 };
 
 document.getElementById('triggerBoxPopup').addEventListener('click', function() {
-    clevertap.event.push("Pop-up Test Triggered", {"Type": "Box"});
+    clevertap.event.push("Pop-up Test BOX Triggered");
     alert('A "Box" campaign will show if you have one active for the event "Pop-up Test Triggered" in your dashboard.');
 });
 
 document.getElementById('triggerBannerPopup').addEventListener('click', function() {
-    clevertap.event.push("Pop-up Test Triggered", {"Type": "Banner"});
+    clevertap.event.push("Pop-up Test BANNER Triggered");
     alert('A "Banner" campaign will show if active.');
 });
 
 document.getElementById('triggerInterstitialPopup').addEventListener('click', function() {
-    clevertap.event.push("Pop-up Test Triggered", {"Type": "Interstitial"});
+    clevertap.event.push("Pop-up Test INTER Triggered");
     alert('An "Interstitial" campaign will show if active.');
 });
 
@@ -166,40 +166,3 @@ document.getElementById('triggerExitIntent').addEventListener('click', function(
 });
 
 console.log('Web Pop-up handlers initialized.');
-
-// document.addEventListener("CT_web_native_display", function(event) {
-//     console.log("[CleverTap] Native Display Event Received:", event.detail);
-
-//     const data = event.detail;
-//     const topic = data.kv.topic;
-//     switch (topic) {
-//         case "Cart drop-off":
-//             renderCartDropOffCampaign(data);
-//             break;
-//         default:
-//             console.warn("[CleverTap] Unknown campaign topic:", topic);
-//     }
-// });
-
-// function renderCartDropOffCampaign(data) {
-//     const userName = data.kv.Name;
-//     const productName = data.kv.Cart;
-
-//     const bannerEl = document.getElementById('custom-kv-container');
-//     bannerEl.style.display = 'block';
-
-//     document.getElementById('user-name').textContent = userName;
-//     document.getElementById('product-name').textContent = productName;
-
-//     bannerEl.querySelector('.close').addEventListener('click', function() {
-//         bannerEl.style.display = 'none';
-//     });
-
-//     clevertap.renderNotificationViewed(data);
-
-//     bannerEl.addEventListener('click', function() {
-//         clevertap.renderNotificationClicked(data);
-//     });
-
-//     console.log(`[CleverTap] Rendered cart drop-off campaign for ${userName}`);
-// }
