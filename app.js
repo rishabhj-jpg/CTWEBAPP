@@ -89,11 +89,11 @@ inboxBell.addEventListener('click', function() {
 markAllReadBtn.addEventListener('click', function() {
     clevertap.markReadAllInboxMessage();
     alert('All messages marked as read.');
-    updateUnreadBadge();
+    
     loadInboxMessages();
 });
 
-updateUnreadBadge();
+
 
 document.addEventListener("CT_web_native_display", function(event) {
     console.log("Native Display Campaign Received:", event.detail);
