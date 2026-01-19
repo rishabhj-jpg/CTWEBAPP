@@ -131,10 +131,6 @@ clevertap.notificationCallback = function(notification) {
     });
     setTimeout(function() {
         var actionButton = document.getElementById('popup-action-btn');
-        actionButton.addEventListener('click', function() {
-        clevertap.event.push("push");
-        alert('A web push  in your dashboard.');
-        });
         if (actionButton) {
             actionButton.addEventListener('click', function() {
                 clevertap.renderNotificationClicked({
@@ -166,6 +162,10 @@ document.getElementById('triggerInterstitialPopup').addEventListener('click', fu
 document.getElementById('triggerExitIntent').addEventListener('click', function() {
     clevertap.event.push("Exit Intent Simulated");
     alert('Exit Intent simulated.');
+});
+document.getElementById('popup-action-btn').addEventListener('click', function() {
+    clevertap.event.push("push Simulated");
+    alert('push simulated.');
 });
 
 document.getElementById()
