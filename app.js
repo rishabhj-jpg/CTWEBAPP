@@ -185,7 +185,7 @@ function renderCartDropOffCampaign(data) {
     const userName = data.kv.Name;
     const productName = data.kv.Cart;
 
-    const bannerEl = document.getElementById('cart-dropoff-banner');
+    const bannerEl = document.getElementById('custom-kv-container');
     bannerEl.style.display = 'block';
 
     document.getElementById('user-name').textContent = userName;
