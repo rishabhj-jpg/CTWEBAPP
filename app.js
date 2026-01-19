@@ -98,7 +98,7 @@ markAllReadBtn.addEventListener('click', function() {
 document.addEventListener("CT_web_native_display", function(event) {
     console.log("Native Display Campaign Received:", event.detail);
     const data = event.detail;
-    const bannerContainer = document.getElementById('native-display-banner');
+    const bannerContainer = document.getElementById('clevertap-banner-container');
 
     if (data.kv && data.kv.topic === "Welcome") {
         bannerContainer.innerHTML = `
