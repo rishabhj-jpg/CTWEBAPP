@@ -19,7 +19,7 @@ clevertap.notifications.push({
    	"rejectButtonText": "No thanks",
    	"okButtonColor":"#F28046",
    	"askAgainTimeInSeconds":5,
-  	"serviceWorkerPath": "/Users/rishabh.j/CTWEBAPP/clevertap_sw.js" 
+  	"serviceWorkerPath": "/clevertap_sw.js" 
   });
 });
 
